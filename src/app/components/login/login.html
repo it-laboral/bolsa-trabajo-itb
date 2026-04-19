@@ -1,0 +1,32 @@
+<p>login works!</p>
+<div class="login-container">
+
+  <h2>Bolsa de Trabajo — ITB</h2>
+  <h3>Iniciar Sesión</h3>
+
+  <!-- [(ngModel)] enlaza el input con la variable "email" del componente -->
+  <input
+    type="email"
+    placeholder="Correo electrónico"
+    [(ngModel)]="email"
+  />
+
+  <!-- [(ngModel)] enlaza el input con la variable "password" del componente -->
+  <input
+    type="password"
+    placeholder="Contraseña"
+    [(ngModel)]="password"
+  />
+
+  <!-- *ngIf muestra este párrafo SOLO si errorMsg tiene contenido -->
+  <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+  <!-- (click) llama a la función iniciarSesion() al hacer click -->
+  <button (click)="iniciarSesion()">Entrar</button>
+
+  <p>¿No tenés cuenta? 
+    <!-- (click) navega a la pantalla de registro -->
+    <a (click)="irARegistro()">Registrate</a>
+  </p>
+
+</div>

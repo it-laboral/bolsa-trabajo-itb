@@ -1,0 +1,54 @@
+<p>registro works!</p>
+<div class="registro-container">
+
+  <h2>Bolsa de Trabajo — ITB</h2>
+  <h3>Crear Cuenta</h3>
+
+  <!-- Campo nombre completo -->
+  <input
+    type="text"
+    placeholder="Nombre completo"
+    [(ngModel)]="nombre"
+  />
+
+  <!-- Campo email -->
+  <input
+    type="email"
+    placeholder="Correo electrónico"
+    [(ngModel)]="email"
+  />
+
+  <!-- Selector de rol: define si el usuario es alumno o empresa -->
+  <select [(ngModel)]="rol">
+    <option value="alumno">Alumno</option>
+    <option value="empresa">Empresa</option>
+  </select>
+
+  <!-- Campo contraseña -->
+  <input
+    type="password"
+    placeholder="Contraseña"
+    [(ngModel)]="password"
+  />
+
+  <!-- Campo confirmación de contraseña -->
+  <input
+    type="password"
+    placeholder="Confirmar contraseña"
+    [(ngModel)]="confirmPassword"
+  />
+
+  <!-- Mensaje de error, visible solo si hay un error -->
+  <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+  <!-- Mensaje de éxito, visible solo si el registro fue exitoso -->
+  <p class="exito" *ngIf="exitoMsg">{{ exitoMsg }}</p>
+
+  <!-- Botón que llama a la función registrarse() -->
+  <button (click)="registrarse()">Crear cuenta</button>
+
+  <p>¿Ya tenés cuenta?
+    <a (click)="irALogin()">Iniciá sesión</a>
+  </p>
+
+</div>

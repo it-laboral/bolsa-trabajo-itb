@@ -19,6 +19,7 @@ export class LoginComponent {
   // Variables que se enlazan con los inputs del formulario
   email: string = '';
   password: string = '';
+  
 
   // Variable para mostrar mensajes de error en pantalla
   errorMsg: string = '';
@@ -26,8 +27,12 @@ export class LoginComponent {
   // Router nos permite navegar entre pantallas desde el código
   constructor(private router: Router) {}
 
+
+ 
+
+
   // Función que se ejecuta cuando el usuario hace click en "Iniciar sesión"
-  iniciarSesion() {
+ iniciarSesion() {
 
     // Validación: verificamos que los campos no estén vacíos
     if (this.email === '' || this.password === '') {

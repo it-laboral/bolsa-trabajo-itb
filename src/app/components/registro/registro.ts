@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   // CommonModule: permite usar directivas como *ngIf
   imports: [FormsModule, CommonModule],
   templateUrl: './registro.html',
- styleUrl: './registro.css',
+  styleUrl: './registro.css'
 })
 export class RegistroComponent {
 
@@ -21,18 +21,22 @@ export class RegistroComponent {
   confirmPassword: string = '';
 
   // Rol del usuario: puede ser 'alumno' o 'empresa'
-  // Por defecto arranca en 'alumno'
   rol: string = 'alumno';
 
   // Variables para mostrar mensajes en pantalla
   errorMsg: string = '';
   exitoMsg: string = '';
 
+  // Controla si la contraseña es visible o no
+  mostrarPassword: boolean = false;
+
+  // Controla si la confirmación de contraseña es visible o no
+  mostrarConfirmPassword: boolean = false;
+
   constructor(private router: Router) {}
 
   // Función que se ejecuta cuando el usuario hace click en "Crear cuenta"
   registrarse() {
-
     // Validación 1: todos los campos deben estar completos
     if (!this.nombre || !this.email || !this.password || !this.confirmPassword) {
       this.errorMsg = 'Por favor completá todos los campos.';
@@ -59,6 +63,16 @@ export class RegistroComponent {
     setTimeout(() => {
       this.router.navigate(['/login']);
     }, 2000);
+  }
+
+  // Alterna entre mostrar y ocultar la contraseña
+  togglePassword() {
+    this.mostrarPassword = !this.mostrarPassword;
+  }
+
+  // Alterna entre mostrar y ocultar la confirmación de contraseña
+  toggleConfirmPassword() {
+    this.mostrarConfirmPassword = !this.mostrarConfirmPassword;
   }
 
   // Función para volver a la pantalla de login

@@ -47,21 +47,22 @@
 .login-container {
   width: 100%;
   max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-
+  margin: 30px auto;
+  padding: 20px;
   background: white;
   border-radius: 12px;
-
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-
   text-align: center;
-}
+   display: flex;
+  flex-direction: column;
+  gap: 8px;
 
+
+} 
 /* Logo */
 .logo-nav {
-  width: 80px;
-  margin-bottom: 10px;
+  width: 350px;
+  margin-bottom: 5px;
 }
 
 /* Título login */
@@ -97,7 +98,7 @@
 
 /* Iconos */
 .icono {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* Botón */
@@ -140,4 +141,10 @@ button:hover {
   color: red;
   font-size: 14px;
   margin-top: 5px;
+}
+/* Ojito para mostrar/ocultar contraseña */
+.ojito {
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: auto;
 }
